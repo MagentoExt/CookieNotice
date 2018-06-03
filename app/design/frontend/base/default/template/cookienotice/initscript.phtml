@@ -1,0 +1,67 @@
+<?php
+/**
+ * Copyright 2018, All rights reserved.
+ */
+
+$_helper = Mage::helper('cookienotice');
+
+$position = $_helper->getPosition();
+$theme = $_helper->getTheme();
+
+$bannerText = $_helper->getBannerText();
+$readmoreText = $_helper->getReadmoreLinkText();
+$buttonText = $_helper->getBannerButtonText();
+$pageLink = $_helper->getCmsPage();
+
+$bannerColor = $_helper->getBannerColor();
+$bannerTextColor = $_helper->getBannerTextColor();
+$buttonColor = $_helper->getButtonColor();
+$buttonTextColor = $_helper->getButtonTextColor();
+
+$isActive = $_helper->isActive();
+if ($isActive) {
+?>
+	<script type="text/javascript">
+		window.addEventListener("load", function(){
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#<?= $bannerColor ?>",
+						"text": "#<?= $bannerTextColor ?>",
+					},
+					"button": {
+						"text": "#<?= $buttonTextColor ?>",
+						<?php if ($theme == "border") { ?>
+							"background": "transparent",
+							"border": "#<?= $buttonColor ?>",
+						<?php } else { ?>
+							"background": "#<?= $buttonColor ?>",
+						<?php } ?>
+					}
+				},
+
+				<?php if ($position) { ?>
+					<?php if ($position == "topFixed") { ?>
+						"position": "top",
+						"static": true,
+					<?php } else { ?>
+						"position": "<?= $position ?>",
+					<?php } ?>
+				<?php } ?>
+
+				<?php if ($theme && $theme != "border") { ?>
+					"theme": "<?= $theme ?>",
+				<?php } ?>
+
+				"content": {
+					"message": "<?= $bannerText ?>",
+					"link": "<?= $readmoreText ?>",
+					"dismiss": "<?= $buttonText ?>",
+					"href": "<?= $pageLink ?>"
+				}
+			});
+		});
+	</script>
+<?php
+} // end if isActive condition
+?>

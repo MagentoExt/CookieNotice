@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright 2018, All rights reserved.
+ */
+-->
+<config>
+	<modules>
+		<Azcode_CookieNotice>
+			<version>1.0</version>
+		</Azcode_CookieNotice>
+	</modules>
+	<global>
+		<blocks>
+			<cookienotice>
+				<class>Azcode_CookieNotice_Block</class>
+			</cookienotice>
+		</blocks>
+		<helpers>
+			<cookienotice>
+				<class>Azcode_CookieNotice_Helper</class>
+			</cookienotice>
+		</helpers>
+		<models>
+			<cookienotice>
+				<class>Azcode_CookieNotice_Model</class>
+			</cookienotice>
+		</models>
+	</global>
+	<frontend>
+		<layout>
+			<updates>
+				<cookienotice>
+					<file>cookienotice.xml</file>
+				</cookienotice>
+			</updates>
+		</layout>
+	</frontend>
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<cookienotice>
+											<title>Cookie Notification</title>
+										</cookienotice>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<default>
+		<cookienotice>
+			<general>
+				<show>1</show>
+				<type>notice_bar</type>
+				<bar_position>notice_bar_bottom</bar_position>
+				<box_position>notice_box_bottom_right</box_position>
+				<layout>notice_layout_round_edges</layout>
+			</general>
+			<content>
+				<banner_text>This websites use cookies. By continuing to browse the site you are agreeing to our use of cookies.</banner_text>
+				<banner_button_text>OK</banner_button_text>
+				<readmore_link_text>Read More</readmore_link_text>
+				<cms_page>privacy-policy-cookie-restriction-mode</cms_page>
+			</content>
+			<style>
+				<banner_color>000000</banner_color>
+				<banner_text_color>FFFFFF</banner_text_color>
+				<button_color>F1D600</button_color>
+				<button_text_color>000000</button_text_color>
+			</style>
+		</cookienotice>
+	</default>
+</config>

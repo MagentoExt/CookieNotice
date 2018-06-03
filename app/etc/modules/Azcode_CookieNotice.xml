@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright 2018, All rights reserved.
+ */
+-->
+<config>
+	<modules>
+		<Azcode_CookieNotice>
+			<active>true</active>
+			<codePool>community</codePool>
+		</Azcode_CookieNotice>
+	</modules>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+	<default>
+		<reference name="head">
+			<action method="addItem" ifconfig="cookienotice/general/show">
+				<type>skin_css</type>
+				<name>azcode/cookienotice/css/cookienoticelib.min.css</name>
+			</action>
+
+			<action method="addItem" ifconfig="cookienotice/general/show">
+				<type>skin_js</type>
+				<name>azcode/cookienotice/js/cookienoticelib.min.js</name>
+			</action>
+
+			<block name="cookienotice.initscript" type="core/template" before="-"
+					template="cookienotice/initscript.phtml"/>
+		</reference>
+	</default>
+</layout>

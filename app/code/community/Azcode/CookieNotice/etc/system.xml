@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright 2018, All rights reserved.
+ */
+-->
+<config>
+	<tabs>
+		<azcode_modules translate="label">
+			<label>AZ Code</label>
+			<sort_order>100</sort_order>
+		</azcode_modules>
+	</tabs>
+	<sections>
+		<cookienotice module="cookienotice">
+			<label>Cookie Notification</label>
+			<tab>azcode_modules</tab>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label" module="cookienotice">
+					<label>Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<expanded>1</expanded>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<show translate="label">
+							<label>Show Cookie Notice</label>
+							<comment>To Show/Hide cookie notice.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>cookienotice/config_show</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show>
+						<type translate="label">
+							<label>Type</label>
+							<comment>Select type of cookie notice.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>cookienotice/config_type</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</type>
+						<bar_position translate="label">
+							<label>Bar Position</label>
+							<comment>Select cookie notice bar position.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>cookienotice/config_bar_position</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<type>notice_bar</type>
+							</depends>
+						</bar_position>
+						<box_position translate="label">
+							<label>Box Position</label>
+							<comment>Select cookie notice box position.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>cookienotice/config_box_position</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<type>notice_box</type>
+							</depends>
+						</box_position>
+						<layout translate="label">
+							<label>Layout</label>
+							<comment>Select cookie notice design layout.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>cookienotice/config_layout</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</layout>
+					</fields>
+				</general>
+				<content translate="label" module="cookienotice">
+					<label>Content</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<expanded>1</expanded>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<banner_text translate="label">
+							<label>Message text</label>
+							<comment>for cookie notice text.</comment>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</banner_text>
+						<banner_button_text translate="label">
+							<label>Button text</label>
+							<comment>for cookie notice accept button text.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</banner_button_text>
+						<readmore_link_text translate="label">
+							<label>Read More Link text</label>
+							<comment>Add cookie notice read more link text.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</readmore_link_text>
+						<cms_page translate="label">
+							<label>Page</label>
+							<comment>for privacy policy page, which will be linked to read more text.</comment>
+							<source_model>adminhtml/system_config_source_cms_page</source_model>
+							<frontend_type>select</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cms_page>
+					</fields>
+				</content>
+				<style translate="label" module="cookienotice">
+					<label>Style</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>3</sort_order>
+					<expanded>1</expanded>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<banner_color translate="label">
+							<label>Banner Color</label>
+							<comment>For cookie notice bar/box background color.</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>cookienotice/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</banner_color>
+						<banner_text_color translate="label">
+							<label>Banner Text Color</label>
+							<comment>For cookie notice message color.</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>cookienotice/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</banner_text_color>
+						<button_color translate="label">
+							<label>Button Color</label>
+							<comment>For cookie notice button background color. for button border layout, this will use as a border color.</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>cookienotice/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</button_color>
+						<button_text_color translate="label">
+							<label>Button Text Color</label>
+							<comment>For cookie notice button text color.</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>cookienotice/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</button_text_color>
+					</fields>
+				</style>
+			</groups>
+		</cookienotice>
+	</sections>
+</config>
